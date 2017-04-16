@@ -2,6 +2,9 @@
 
 ## CSS相关
 bfc原理 触发方式
+> * BFC(Block formatting context)直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。
+
+
 > * 根元素
 > * float不为none
 > * position为absolute or fixed
@@ -9,6 +12,8 @@ bfc原理 触发方式
 > * overflow不为visible
 
 margin重叠原理 解决
+> * Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠
+> * 解决办法就是触发BFC
 
 不定大小元素多方法居中
 
