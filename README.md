@@ -22,6 +22,14 @@ margin重叠原理 解决
 > * line-height方法
 
 ### zindex默认排序 交叉重叠
+> * 顺序：正z-index
+> * 1. 正z-index
+> * 2. z-index：auto； or z-index：0； 不依赖z-index的层叠上下文
+> * 3. inline/inline-block水平盒子
+> * 4. float浮动盒子
+> * 5. block块级盒子
+> * 6. 负z-index
+> * 7. 层叠上下文 background/border
 > * [面试题目](https://jsfiddle.net/lunhui/z6x948cv/)
 > * [原理详解](http://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/)
 
