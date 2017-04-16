@@ -34,11 +34,22 @@ margin重叠原理 解决
 > * [原理详解](http://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/)
 
 ### html5新标签语义化
-> * w3c网站查
+> w3c网站查
+> [一些例子](http://www.html5jscss.com/html5-semantics-section.html)
 
 ### div和section语意区别
+> [没有太明确答案，知乎答案](https://www.zhihu.com/question/20227599)
 
-### 语义化意义判断盒模型
+### 语义化意义
+> 1. 根据内容的结构化（内容语义化），选择合适的标签（代码语义化）便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。
+> 2. css没有时候也能看
+> 3. SEO
+> 4. 用户体验 
+> 5. 后续人员维护方便 
+> 6. 其他设备正确解析 
+
+### 判断盒模型
+> content-box和border-box
 
 ### boxsizing可选值和意思
 
