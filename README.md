@@ -2,6 +2,10 @@
 
 ## CSS相关
 bfc原理 触发方式
+> * 根元素
+* float不为none
+* position为absolute or fixed
+* diaplay为inline-block or table-cell or table-caption or flex or inline-flex
 
 margin重叠原理 解决
 
