@@ -6,6 +6,7 @@ bfc原理 触发方式
 > * float不为none
 > * position为absolute or fixed
 > * diaplay为inline-block or table-cell or table-caption or flex or inline-flex
+> * overflow不为visible
 
 margin重叠原理 解决
 
