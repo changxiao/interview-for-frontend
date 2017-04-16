@@ -123,23 +123,43 @@ Expires/Cache-Control
 
 ### localstorage接口
 
-setItem存储value
+1. setItem存储value
 
 用法：.setItem( key, value)
 
-getItem获取value
+2. getItem获取value
 
 用法：.getItem(key)
 
-removeItem删除key
+3. removeItem删除key
 
 用法：.removeItem(key)
 
-clear清除所有的key/value
+4. clear清除所有的key/value
 
 用法：.clear()
 
+5. 其他操作方法：点操作和[]
+
 ### cookie字段
+
+1. name字段为一个cookie的名称。
+
+2. value字段为一个cookie的值。
+
+3. domain字段为可以访问此cookie的域名。
+
+4. path字段为可以访问此cookie的页面路径。 比如domain是abc.com,path是/test，那么只有/test路径下的页面可以读取此cookie。
+
+5. expires/Max-Age 字段为此cookie超时时间。若设置其值为一个时间，那么当到达此时间后，此cookie失效。不设置的话默认值是Session，意思是cookie会和session一起失效。当浏览器关闭(不是浏览器标签页，而是整个浏览器) 后，此cookie失效。
+
+6. Size字段 此cookie大小。
+
+7. http字段  cookie的httponly属性。若此属性为true，则只有在http请求头中会带有此cookie的信息，而不能通过document.cookie来访问此cookie。
+
+8. secure 字段 设置是否只能通过https来传递此条cookie
+
+
 
 ### ls和cookie区别
 
