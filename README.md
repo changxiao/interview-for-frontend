@@ -53,10 +53,20 @@ margin重叠原理 解决
 
 ### boxsizing可选值和意思
 
+> 同上
+
+
 ## javascript相关
 ### promise实现原理
 
 ### foreach map区别
+forEach和map都支持2个参数：一个是回调函数（item,index,list）和上下文；
+
+不管是forEach还是map 都支持第二个参数值，第二个参数的意思是把匿名回调函数中的this进行修改。
+
+forEach没有返回值，不会影响原数组
+
+map有返回值，返回新数组，不会影响原数组
 
 ### 数组套数组parse
 
