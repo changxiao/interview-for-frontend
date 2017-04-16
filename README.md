@@ -1,6 +1,7 @@
 # interview-for-frontend
 
 ## CSS相关
+
 ### bfc原理 触发方式
 > * BFC(Block formatting context)直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。
 
@@ -11,7 +12,7 @@
 > * diaplay为inline-block or table-cell or table-caption or flex or inline-flex
 > * overflow不为visible
 
-margin重叠原理 解决
+### margin重叠原理 解决
 > * Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠
 > * 解决办法就是触发BFC
 
@@ -60,6 +61,7 @@ margin重叠原理 解决
 ### promise实现原理
 
 ### foreach map区别
+
 forEach和map都支持2个参数：一个是回调函数（item,index,list）和上下文；
 
 不管是forEach还是map 都支持第二个参数值，第二个参数的意思是把匿名回调函数中的this进行修改。
@@ -69,16 +71,73 @@ forEach没有返回值，不会影响原数组
 map有返回值，返回新数组，不会影响原数组
 
 ### 数组套数组parse
+> 解析字符串"[1,3,2,[2,3,4,[2,3,4],2],231,[23,42]]"(不使用原生方法)
+> //TODO
 
 ### 用settimeout实现setinterval 和cleartimeout接口
 
-### sort传参
+#### 正确解法
+
+还不会写。。。。下面为错误答案
+`var myInterval = (function() {
+	var t = null;
+	return function interval(fn,time){
+		t = setTimeout(function() {
+			fn();
+			interval(fn,time);
+		},time);
+		return t;
+	}
+})()`
+
 
 ### array方法列表
 
+1. concat
+2. join
+3. pop
+4. push
+5. reverse
+6. shift
+7. slice
+8. sort
+9. splice
+10. toString
+11. toLocalString
+12. unshift
+13. forEach
+14. map
+15. filter
+16. some
+17. every
+18. indexOf
+19. lastIndexOf
+20. reduce
+21. reduceRight
+
 ### http头缓存相关
 
-### localstore接口
+Expires/Cache-Control
+
+缓存日期时间和最大时间
+
+### localstorage接口
+
+setItem存储value
+
+用法：.setItem( key, value)
+
+getItem获取value
+
+用法：.getItem(key)
+
+removeItem删除key
+
+用法：.removeItem(key)
+
+clear清除所有的key/value
+
+用法：.clear()
 
 ### cookie字段
 
@@ -104,7 +163,9 @@ map有返回值，返回新数组，不会影响原数组
 
 ### 深度clone
 
-### cmd标准
+### cmd标准 
+
+### requestAnimationFrame
 
 ### 元素宽高取值方法
 
