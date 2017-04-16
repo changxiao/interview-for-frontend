@@ -79,7 +79,8 @@ map有返回值，返回新数组，不会影响原数组
 #### 正确解法
 
 还不会写。。。。下面为错误答案
-`var myInterval = (function() {
+``` javascript
+var myInterval = (function() {
 	var t = null;
 	return function interval(fn,time){
 		t = setTimeout(function() {
@@ -88,7 +89,8 @@ map有返回值，返回新数组，不会影响原数组
 		},time);
 		return t;
 	}
-})()`
+})()
+```
 
 
 ### array方法列表
