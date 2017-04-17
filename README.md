@@ -60,6 +60,8 @@
 ## javascript相关
 ### promise实现原理
 
+TODO
+
 ### foreach map区别
 
 forEach和map都支持2个参数：一个是回调函数（item,index,list）和上下文；
@@ -76,11 +78,60 @@ map有返回值，返回新数组，不会影响原数组
 
 ### 用settimeout实现setinterval 和cleartimeout接口
 
-#### 正确解法
-
 [答案1](https://jsfiddle.net/nsy3kqhm/2/)
+
+``` javascript
+function myInterval(fn,t) {
+  var timer = null;
+  (function interval(fn,t){
+    timer = setTimeout(function(){
+      fn();
+      interval(fn,t)
+    },t)
+  })(fn,t);
+  return function(){
+  	return timer;
+   }
+}
+
+var myInter = myInterval(function(){
+	console.log(1)
+},300)
+
+setTimeout(function(){
+	clearTimeout(myInter())
+},3000)
+```
+
 [答案2](https://jsfiddle.net/nsy3kqhm/3/)
 
+``` javascript
+function myInterval(fn,t) {
+  var timer = {
+  	ti :null,
+  	cleartime: function(){
+    	clearTimeout(this.ti);
+      console.log('success clear')
+    }
+  };
+  (function interval(fn,t){
+    timer.ti = setTimeout(function(){
+      fn();
+      interval(fn,t)
+    },t)
+  })(fn,t);
+  return timer;
+}
+
+var myInter = myInterval(function(){
+	console.log(1)
+},300)
+
+setTimeout(function(){
+	console.log(myInter.ti)
+	clearTimeout(myInter.cleartime())
+},3000)
+```
 
 ### array方法列表
 
@@ -161,12 +212,18 @@ Expires/Cache-Control
 
 ### 后台存放防止前端获取的数据
 
+TODO
+
 ### web安全
+
+TODO
 
 ### vue双向绑定原理
 [vue官方文档](https://cn.vuejs.org/v2/guide/reactivity.html)
 
 ### 前端灾备方案 比如后端接口挂了
+
+TODO
 
 ### 继承
 
@@ -191,6 +248,8 @@ function Child(){
 
 ### 多继承
 
+TODO
+
 ### 判断字符串是否回文
 
 ``` javascript
@@ -204,6 +263,31 @@ console.log(plalindrome(s) == s)
 
 
 ### 数组去重
+
+[基本类型前提下，for in 方法](https://jsfiddle.net/ancwqw9u/)
+
+``` javascript
+var arr = [123,12,31,23,12,312,312,1,21,21,23,12,31,1,1,1,23,4,14,15,55213];
+
+function removal(arr) {
+	var tempobj = {};
+  var arrlength = arr.length;
+  var result = [];
+	for(var i = 0; i < arrlength; i++) {
+  	var temp = arr[i]
+  	if(typeof tempobj[temp] === 'undefined') {
+    	tempobj[temp] = true;
+    } 
+  }
+  for( var key in tempobj) {
+  	result.push(key);
+  }
+  
+  return result
+}
+
+console.log( removal(arr))
+```
 
 ### 基本类型
 
@@ -219,9 +303,15 @@ Object、Array和Function则属于引用类型
 
 ### 数组去重延伸到复杂类型
 
+TODO
+
 ### 深度clone
 
-### cmd标准 
+TODO
+
+### cmd规范
+
+[作者github](https://github.com/seajs/seajs/issues/242)
 
 ### requestAnimationFrame
 
@@ -231,8 +321,40 @@ requestAnimationFrame更加智能，它并非加快执行速度，而是适当�
 
 ### 元素宽高取值方法
 
+> offsetWidth
+> offsetHeight
+
+
+### js事件模型
+
+TODO
+
 ## 算法相关
+
 ### 冒泡排序
+
+[答案](https://jsfiddle.net/ancwqw9u/1/)
+
+``` javascript
+var arr = [1,3,2,4,1,12,2,5,213,14,1,24,124,21,312,321,31,41,51,25,12,512,5,12,512,521,51,25,12,51];
+function bubbleSort(arr) {
+	var arrlength = arr.length;
+	for( var i = 0; i < arrlength - 1; i++){
+  	for( var j = 0; j < arrlength - i -1; j++  ){
+    	var temp = null;
+      if( arr[j] > arr[j+1] ){
+      	temp = arr[j];
+        arr[j] = arr[j+1]
+        arr[j+1] = temp;
+      } 
+    }
+    console.log(arr)
+  }
+ 	return arr
+}
+console.log(bubbleSort(arr))
+```
+
 
 ### 快速排序
 
@@ -260,6 +382,14 @@ console.log( quickSort(arr))
 
 
 ### 随机数组
+
+``` javascript
+var arr=[1,2,3,4,5,6,7,8,9,10,22,33,55,77,88,99];  
+arr.sort(function(){
+	return Math.random()>0.5?-1:1;
+});  
+console.log(arr)
+```
 
 
 
