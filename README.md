@@ -73,8 +73,71 @@ forEach没有返回值，不会影响原数组
 map有返回值，返回新数组，不会影响原数组
 
 ### 数组套数组parse
-> 解析字符串"[1,3,2,[2,3,4,[2,3,4],2],231,[23,42]]"(不使用原生方法)
-> //TODO
+> 解析字符串"[1,3,2,[2,3,4,[2,3,4],2],231,[23,42]]" (不使用原生方法)
+> 编译原理的知识点，用到堆栈。
+[答案](https://jsfiddle.net/v8n70fk2/)
+
+``` javascript
+var str = "[1,3,2,[2,3,4,[2,3,4],2],231,[23,42],[12,3,[23,2]]]";
+function popStack(stack){
+  var temp = [];
+  var pop = stack.pop();
+  while(pop !== '[' && stack.length>0){
+    temp.unshift(pop)
+    pop = stack.pop();
+  }
+  stack.push(temp);
+}
+
+function parseArr(str){
+  var tarr = str.split(',');
+  var temp = []
+  for(var i = 0; i < tarr.length; i++){
+    var temp = temp.concat(tarr[i].split('[').map(function(item,idx, array) {
+      if (item.length === 0){
+        item = '['
+      }
+      return item;
+    }));
+  }
+  
+  tarr = []
+  for(var i = 0; i < temp.length; i++){
+    var tarr = tarr.concat(temp[i].split(']').map(function(item,idx, array) {
+      if (item.length === 0){
+        item = ']'
+      }
+      return item;
+    }));
+  }
+  
+  var rusult = [];
+  var stack = [];
+  var stackCount = 0;//实际没有用到
+  tarr.forEach(function(item, idx, arr){
+    if(item === '['){
+      stackCount++;
+      stack.push(item)
+      return;
+    } else if( item === ']'){
+      stackCount--;
+      popStack(stack)
+      return;
+    } else if(stackCount > 0 ){
+      stack.push(parseInt(item))
+    }
+  })
+  
+  return stack[0]  
+}
+
+console.log('生成结果：')
+console.log(parseArr(str))
+
+
+console.log('正确结果：')
+console.log(JSON.parse(str))
+```
 
 ### 用settimeout实现setinterval 和cleartimeout接口
 
