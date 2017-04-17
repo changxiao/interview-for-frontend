@@ -78,19 +78,8 @@ map有返回值，返回新数组，不会影响原数组
 
 #### 正确解法
 
-还不会写。。。。下面为错误答案
-``` javascript
-var myInterval = (function() {
-	var t = null;
-	return function interval(fn,time){
-		t = setTimeout(function() {
-			fn();
-			interval(fn,time);
-		},time);
-		return t;
-	}
-})()
-```
+[答案1](https://jsfiddle.net/nsy3kqhm/2/)
+[答案2](https://jsfiddle.net/nsy3kqhm/3/)
 
 
 ### array方法列表
@@ -235,6 +224,10 @@ Object、Array和Function则属于引用类型
 ### cmd标准 
 
 ### requestAnimationFrame
+
+其用法跟setTimeout差不多，与setTimeout相比，最大的优势是由浏览器来决定函数的执行时机
+
+requestAnimationFrame更加智能，它并非加快执行速度，而是适当时候降帧，防止并解决丢帧问题。
 
 ### 元素宽高取值方法
 
