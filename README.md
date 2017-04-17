@@ -165,21 +165,68 @@ Expires/Cache-Control
 
 ### ls和cookie区别
 
+> 共同点：都是保存在浏览器端，且同源的。localStorage和cookie 在所有同源窗口中都是共享的。
+> 1. cookie数据始终在同源的http请求中携带（即使不需要）,cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。
+> 2. 存储大小限制也不同，cookie数据不能超过4k; localStorage可以额达到5M
+> 3. 数据有效期不同，localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。
+
 ### 后台存放防止前端获取的数据
 
 ### web安全
 
 ### vue双向绑定原理
+[vue官方文档](https://cn.vuejs.org/v2/guide/reactivity.html)
 
 ### 前端灾备方案 比如后端接口挂了
 
 ### 继承
 
+``` javascript
+function Parent(){
+	this.pname = 'parent';
+}
+Parent.prototype.say = function(){
+	console.log('im' + this.pname);
+}
+function Child(){
+	Parent.call(this);
+	this.cname = 'cname'
+}
+(function(){
+	var F = function(){};
+	F.prototype = Parent.prototype;
+	F.constructor = Child;
+	Child.prototype = new F();
+}())
+```
+
 ### 多继承
 
 ### 判断字符串是否回文
 
-### 数组去重基本类型
+``` javascript
+var s = 'abcdcba';
+function plalindrome(str) {
+	str = str.split('').reverse().join('');
+  return str;
+}
+console.log(plalindrome(s) == s)
+```
+
+
+### 数组去重
+
+### 基本类型
+
+1. String
+2. Number
+3. Boolean
+4. null
+5. undefined
+
+复杂的数据类型————Object
+
+Object、Array和Function则属于引用类型
 
 ### 数组去重延伸到复杂类型
 
@@ -195,6 +242,29 @@ Expires/Cache-Control
 ### 冒泡排序
 
 ### 快速排序
+
+``` javascript
+var arr = [1,3,2,4,1,12,2,5,213,14,1,24,124,21,312,321,31,41,51,25,12,512,5,12,512,521,51,25,12,51];
+function quickSort(arr) {
+	if(arr.length < 2) {
+  	return arr;
+   }
+   var feature = arr.splice(Math.floor(arr.length/2),1),
+        left = [],
+        right = [],
+        arrlength = arr.length;
+   for( var i = 0; i < arrlength; i++){
+   		if( arr[i] < feature ) {
+      	left.push(arr[i])
+      } else {
+      	right.push(arr[i])
+      }
+   }
+   return quickSort(left).concat(feature, quickSort(right));
+}
+console.log( quickSort(arr))
+```
+
 
 ### 随机数组
 
