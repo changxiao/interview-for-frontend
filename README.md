@@ -390,7 +390,7 @@ requestAnimationFrame更加智能，它并非加快执行速度，而是适当�
 
 ### js事件模型
 
-TODO
+> 先捕获，后冒泡
 
 ## 算法相关
 
