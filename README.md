@@ -21,6 +21,7 @@
 > * 绝对定位-50%，css3 transform 位移-50%
 > * [table-cell方法](https://jsfiddle.net/lunhui/86663Ljx/)
 > * line-height方法
+> * 兼容办法，负元素绝对定位50%，子元素相对定位-50%
 
 ### zindex默认排序 交叉重叠
 > 顺序：正z-index
@@ -58,6 +59,7 @@
 
 
 ## javascript相关
+
 ### promise实现原理
 
 TODO
@@ -279,7 +281,8 @@ TODO
 
 ### web安全
 
-TODO
+> XSS
+> TODO
 
 ### vue双向绑定原理
 [vue官方文档](https://cn.vuejs.org/v2/guide/reactivity.html)
@@ -386,6 +389,7 @@ requestAnimationFrame更加智能，它并非加快执行速度，而是适当�
 
 > offsetWidth
 > offsetHeight
+> [参考](http://blog.csdn.net/charlene0824/article/details/50535449)
 
 
 ### js事件模型
