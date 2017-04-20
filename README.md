@@ -459,6 +459,12 @@ console.log(arr)
 ```
 
 
+## 概念相关
 
+### MVC和MVVM区别
 
+> TODO
 
+### 面向对象概念
+
+> TODO
