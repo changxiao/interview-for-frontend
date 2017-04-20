@@ -57,6 +57,10 @@
 
 > 同上
 
+### flex相关属性和值
+
+> TODO 
+
 
 ## javascript相关
 
@@ -457,6 +461,18 @@ arr.sort(function(){
 });  
 console.log(arr)
 ```
+
+### 函数curry化和使用情景
+
+> TODO 
+
+### js实现动画的几种方法
+
+> TODO 
+
+### es6箭头函数和普通函数的区别
+
+> TODO 
 
 
 ## 概念相关
