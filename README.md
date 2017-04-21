@@ -466,6 +466,10 @@ console.log(arr)
 
 > TODO 
 
+### 函数curry化和偏函数区别
+
+> TODO 
+
 ### js实现动画的几种方法
 
 > TODO 
