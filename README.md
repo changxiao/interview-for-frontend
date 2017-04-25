@@ -484,18 +484,14 @@ console.log(arr)
 
 ### 连等赋值的可能问题
 
-> var a = {n:1}
-
-> b = a
-
-> a.x = a = {n:2}
-
-> console.log(a.x) 
-
-> console.log(b.x)
-
-> 运行一下就知道了，属性访问表达式优先级高于赋值运算符。 
-
+```javacript
+var a = {n:1}
+b = a
+a.x = a = {n:2}
+console.log(a.x) 
+console.log(b.x)
+//运行一下就知道了，属性访问表达式优先级高于赋值运算符。 
+```
 
 ## 概念相关
 
