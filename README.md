@@ -455,7 +455,6 @@ function quickSort(arr) {
 console.log( quickSort(arr))
 ```
 
-
 ### 随机数组
 
 ``` javascript
@@ -484,7 +483,7 @@ console.log(arr)
 
 ### 连等赋值的可能问题
 
-```javacript
+``` javacript
 var a = {n:1}
 b = a
 a.x = a = {n:2}
@@ -492,6 +491,62 @@ console.log(a.x)
 console.log(b.x)
 //运行一下就知道了，属性访问表达式优先级高于赋值运算符。 
 ```
+
+### Function, Object, Array的方法名称和例子。
+
+### 过滤下面对象二级内容为isfilter：true的name值
+``` javascrtipt
+[
+  {
+    name: 'index',
+    child: [
+      {
+        name: 'Jhon',
+        isfilter: true
+      },
+      {
+        name: 'Mary',
+        isfilter: true
+      },
+      {
+        name: 'Bill',
+        isfilter: false
+      }
+    ]
+  },
+  {
+    name: 'about',
+    child: [
+      {
+        name: 'Jhon',
+        isfilter: true
+      }
+    ]
+  },
+  {
+    name: 'contact',
+    child: [
+      {
+        name: 'Peter',
+        isfilter: false
+      },
+      {
+        name: 'Gate',
+        isfilter: false
+      }
+    ]
+  }
+]
+```
+> 提示reduce，filter
+
+### 实现add函数
+``` javasrcipt
+add(1)  //return 1
+add(1)(2)(3)  //return 6
+add(1)(4)(5)(7)  //return 17
+```
+> 提示valueOf
 
 ## 概念相关
 
