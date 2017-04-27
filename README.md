@@ -541,6 +541,9 @@ console.log(b.x)
 > 提示reduce，filter
 
 ### 实现add函数
+
+> 提示valueOf
+
 ``` javasrcipt
 add(1)  //return 1
 add(1)(2)(3)  //return 6
@@ -566,8 +569,6 @@ add(1)(2)(4)
 )
 ```
 
-
-> 提示valueOf
 
 ## 概念相关
 
