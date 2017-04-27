@@ -546,6 +546,27 @@ add(1)  //return 1
 add(1)(2)(3)  //return 6
 add(1)(4)(5)(7)  //return 17
 ```
+
+``` javascript
+function add () {
+  var args = Array.prototype.slice.call(arguments,0)
+  var fn = function(){
+    return add.apply(null, args.concat(Array.prototype.slice.call(arguments, 0)))
+  }
+  fn.valueOf = function(){
+    var s = args.reduce(function(prev,next){
+      return prev+next;
+    })
+    return s;
+  }
+  return fn;
+}
+console.log(
+add(1)(2)(4)
+)
+```
+
+
 > 提示valueOf
 
 ## 概念相关
