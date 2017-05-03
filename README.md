@@ -587,7 +587,25 @@ add(1)(2)(4)
 
 > var arr = [[1,2],[2,3],[4,6]]
 
+``` js
+var arr = [[1,2],[2,3],[4,6]]
+
+var a = arr.reduce(function(oldv,newv){
+  console.log(arguments)
+  var temp = []
+  oldv.forEach(function(item,idx){
+    newv.forEach(function(item2, idx2){
+      temp.push(item + '' +item2)
+    })
+  })
+  return temp
+})
+console.log(a)
+```
+
 ### 设计算法，无序不重复的数组，取N个数字，总和为M。写出空间复杂度和时间复杂度
+
+
 
 ## 概念相关
 
