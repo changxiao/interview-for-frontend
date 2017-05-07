@@ -59,7 +59,7 @@
 
 ### flex相关属性和值
 
-> TODO 
+> [flex](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html) 
 
 
 ## javascript相关
@@ -283,8 +283,6 @@ Expires/Cache-Control
 
 > cookie 设置 httponly字段
 
-TODO
-
 ### web安全
 
 > XSS
@@ -361,6 +359,13 @@ function removal(arr) {
 console.log( removal(arr))
 ```
 
+``` js
+var arr = [123,12,31,23,12,312,312,1,21,21,23,12,31,1,1,1,23,4,14,15,55213];
+var newarr = new Set(arr)
+var newarr = Array.from(newarr)
+console.log(newarr)
+```
+
 ### 基本类型
 
 1. String
@@ -417,6 +422,8 @@ requestAnimationFrame更加智能，它并非加快执行速度，而是适当�
 ### 类型转换原理([] == false, {} == false, [1] == [1], [1] == false)
 
 ### 模块化开发中过程中，循环调用问题怎么解决
+
+[原理](http://www.ruanyifeng.com/blog/2015/11/circular-dependency.html)
 
 ## 算法相关
 
