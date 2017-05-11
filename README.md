@@ -5,7 +5,6 @@
 ### bfc原理 触发方式
 > * BFC(Block formatting context)直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。
 
-
 > * 根元素
 > * float不为none
 > * position为absolute or fixed
@@ -21,7 +20,11 @@
 > * 绝对定位-50%，css3 transform 位移-50%
 > * [table-cell方法](https://jsfiddle.net/lunhui/86663Ljx/)
 > * line-height方法
-> * 兼容办法，负元素绝对定位50%，子元素相对定位-50%
+> * 兼容办法，负元素绝对定位50%，子元素相对定位-50% 
+
+### 五个平级元素flex布局, 前三个元素占满一行并宽度相等，第二行开始第四个元素为定宽元素，最后一个元素为自适应占满剩余空间。
+
+### 让三个平级元素实现品字形自适应布局
 
 ### zindex默认排序 交叉重叠
 > 顺序：正z-index
@@ -63,6 +66,10 @@
 
 
 ## javascript相关
+
+### 写一个函数，实现获取url后面参数，并转换为对象
+
+### 实现一个函数pipe，使pipe(a,b,c,d)的运行结果和a(b(c(d())))相同
 
 ### promise实现原理
 
