@@ -71,6 +71,33 @@
 
 ### 实现一个函数pipe，使pipe(a,b,c,d)的运行结果和a(b(c(d())))相同
 
+``` js
+还需完善
+var pipeline = function (...funcs) {
+  return function (val){
+    return funcs.reduce(function(a,b){
+      return b(a)
+    }, val)
+  }
+}
+
+var plus1 = function (a){
+  return a + 1
+}
+var mult2 = function (a){
+  return a * 2
+}
+
+var plus2 = function (a){
+  return a + 2
+}
+var plus3 = function (a){
+  return a + 3
+}
+var addThenMult = pipeline(plus1, mult2, plus2, plus3)
+console.log(addThenMult(5))
+```
+
 ### promise实现原理
 
 TODO
