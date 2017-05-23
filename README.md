@@ -23,8 +23,24 @@
 > * 兼容办法，负元素绝对定位50%，子元素相对定位-50% 
 
 ### 五个平级元素flex布局, 前三个元素占满一行并宽度相等，第二行开始第四个元素为定宽元素，最后一个元素为自适应占满剩余空间。
+``` html
+<div class="a"></div>
+<div class="b"></div>
+<div class="c"></div>
+<div class="d"></div>
+<div class="e"></div>
+```
+``` css
+div{border: 1px solid #000; box-sizing:border-box;}
+body{display:flex; justify-content:center; align-items:stretch; min-height: 100px; flex-wrap:wrap; align-content:stretch;}
+.a,.b,.c{ flex: 1 1 32%;}
+.d,.e{ flex:1 1 auto;}
+.d{ flex: 0 0 50px;}
+```
 
 ### 让三个平级元素实现品字形自适应布局
+
+todo
 
 ### zindex默认排序 交叉重叠
 > 顺序：正z-index
@@ -67,6 +83,8 @@
 
 ## javascript相关
 
+### undefined
+
 ### 写一个函数，实现获取url后面参数，并转换为对象
 
 ### 实现一个函数pipe，使pipe(a,b,c,d)的运行结果和a(b(c(d())))相同
@@ -101,6 +119,7 @@ console.log(addThenMult(5))
 ### promise实现原理
 
 TODO
+状态机
 
 ### foreach map区别
 
